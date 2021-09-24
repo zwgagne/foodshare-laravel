@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class AppController extends Controller
 {
     public function index() {
+        dd(Post::all());
         return view("index");
     }
 

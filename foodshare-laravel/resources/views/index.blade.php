@@ -1,26 +1,46 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>FoodShare</title>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <title>FoodShare</title>
+</head>
+
+<body>
+    <header>
+        <h1>FoodShare</h1>
+        <div>
+            @if (Route::has('login'))
+            @auth
+            @include('layouts.navigation')
+            @else
+            <a class="linkNav right" href="{{ route('login') }}" class="">Log in</a>
+
+            @if (Route::has('register'))
+            <a class="linkNav right" href="{{ route('register') }}">Register</a>
+            @endif
+            @endauth
             @endif
         </div>
-    </body>
+    </header>
+    <main>
+        <h2>Accueil</h2>
+        <section>
+            <article>
+                <div>
+                    <img src="" alt="repas">
+                </div>
+                <div>
+                    <p><b>Description: </b>La description</p>
+                    <span>Temérature</span>
+
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+
 </html>

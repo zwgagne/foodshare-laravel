@@ -1,8 +1,85 @@
-html{
-    background-color: #2d3748;
+body {
+  margin: 0 auto;
+  background-color: #1a202c;
+  color: #FFFFFF;
 }
+
 h1{
-    background-color: #4a5568;
-    border: solid 2px #e2e8f0;
-    color: #cbd5e0;
+  margin: 0px;
 }
+
+header{
+  display: flex;
+  justify-content: space-between;
+  background-color: #EE6352;
+  padding: 20px;
+}
+
+main{
+  margin: 40px 80px;
+}
+
+.linkNav{
+  color: #FFFFFF;
+  text-decoration: none;
+  margin: 10px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border:solid 1px transparent;
+}
+
+.linkNav:hover{
+  border:solid 1px #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.48);
+}
+
+.linkNav:active{
+  background-color: #FFFFFF;
+  color: #1a202c;
+}
+
+.LogNav{
+  display: flex;
+  justify-content: end;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 10vh;
+  right: 3vh;
+  margin: 20px 10px;
+  padding: 20px 25px;
+  border-radius: 8px;
+  background-color: #2a344673;
+  box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.48);
+}
+
+.LogNavInfo{
+  padding: 25px;
+  border-radius: 8px;
+  background-color: #2a344673;
+  box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.48);
+}
+
+.LogNavPosition{
+  margin-right: 15px;
+  font-size: 1.2rem;
+}
+
+.btnLogout{
+  background-color: #FFFFFF;
+  border:solid 1px #FFFFFF;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 5px;
+  border-radius: 8px;
+  color: #1a202c;
+}
+
+.btnLogout:hover{
+  background-color: #2a344673;
+  color: #FFFFFF;
+}
+
+/* Article */
+

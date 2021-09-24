@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil | User_name</title>
-</head>
-<body>
-    <h1>Profil | User_name</h1>
-</body>
-</html>
+<x-app-layout>
+    <x-slot name="header">
+        <h2>
+            {{ __('Profil') }}
+        </h2>
+    </x-slot>
+
+    <div class="py-12">
+        <div>
+            <div>
+                <div>
+                    Voici votre profil!
+                </div>
+            </div>
+        </div>
+    </div>
+</x-app-layout>
