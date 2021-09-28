@@ -30,14 +30,17 @@
         <h2>Accueil</h2>
         <section>
             <article>
+                @foreach ($posts as $post)
                 <div>
-                    <img src="" alt="repas">
+                    <img src="asset('img/{{$post->image}}')" alt="repas">
                 </div>
                 <div>
-                    <p><b>Description: </b>La description</p>
+                    <p><b>Description: </b>{{ $post->description }}</p>
                     <span>Temérature</span>
 
                 </div>
+                @endforeach
+
             </article>
         </section>
     </main>
