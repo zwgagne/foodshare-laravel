@@ -36,7 +36,7 @@
                 </div>
                 <div>
                     <p><b>Description: </b>{{ $post->description }}</p>
-                    <span>Temérature</span>
+                    <span>Température</span>
 
                 </div>
                 @endforeach
