@@ -12,8 +12,8 @@ class AppController extends Controller
         return view('index', compact('posts'));
     }
 
-    public function addFood() {
-        return view("addFood");
+    public function fooddonnation() {
+        return view("fooddonnation");
     }
     
     public function profil() {

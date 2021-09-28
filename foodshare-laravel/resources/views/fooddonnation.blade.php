@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2>
-            {{ __('Dashboard') }}
+            {{ __('Ajouter une denrée') }}
         </h2>
     </x-slot>
 
