@@ -8,12 +8,12 @@ use Illuminate\Http\Request;
 class AppController extends Controller
 {
     public function index() {
-        $posts = food::all();
+        $posts = food::paginate(9);
         return view('index', compact('posts'));
     }
 
-    public function addFood() {
-        return view("addFood");
+    public function fooddonnation() {
+        return view("fooddonnation");
     }
     
     public function profil() {

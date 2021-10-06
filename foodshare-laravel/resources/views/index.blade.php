@@ -11,16 +11,16 @@
 
 <body>
     <header>
-        <h1>FoodShare</h1>
+        <a href="/" class="logo">FoodShare</a>
         <div>
             @if (Route::has('login'))
             @auth
             @include('layouts.navigation')
             @else
-            <a class="linkNav right" href="{{ route('login') }}" class="">Log in</a>
+            <a class="linkNav" href="{{ route('login') }}">Log in</a>
 
             @if (Route::has('register'))
-            <a class="linkNav right" href="{{ route('register') }}">Register</a>
+            <a class="linkNav" href="{{ route('register') }}">Register</a>
             @endif
             @endauth
             @endif
@@ -38,12 +38,41 @@
                     <p><b>Description: </b>{{ $post->description }}</p>
                     <span>Température</span>
 
+                <div class="card">
+                    <div class="sizeImg">
+                        <img class="imgHome" src="/storage/img/{{$post->image}}" alt="repas">
+                    </div>
+                    <div class="foodInfoHome">
+                        <h3><b>Publié par: </b> {{$post->user_id}}</h3>
+                        <p><b>Description: </b>{{ $post->description }}</p>
+                        <span>Temérature: {{$post->meteo}} °C</span>
+                        <p><b>Lieu: </b> Québec</p>
+                    </div>
+                    <div class="btnPositionHomeArt">
+                        <button name="" class="btnReserve">
+                            <lord-icon src="https://cdn.lordicon.com/mecwbjnp.json" trigger="click" colors="primary:#ffffff,secondary:#ee6352" style="width:50px;height:50px">
+                            </lord-icon>
+                        </button>
+                        <button name="" class="bhtDelete">
+                            <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop-on-hover" colors="primary:#ffffff,secondary:#ee6352" style="width:50px;height:50px">
+                            </lord-icon>
+                        </button>
+                    </div>
                 </div>
-                @endforeach
-
             </article>
+            @endforeach
         </section>
+        <a href="/FoodDonnation">
+            <lord-icon class="testAdd" src="https://cdn.lordicon.com/mecwbjnp.json" trigger="loop-on-hover" colors="primary:#ffffff,secondary:#ee6352" style="width:80px;height:80px">
+            </lord-icon>
+        </a>
+        <div>
+            {{$posts->links('paginationStyle') }}
+        </div>
     </main>
+
+
+    <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
 </body>
 
 </html>

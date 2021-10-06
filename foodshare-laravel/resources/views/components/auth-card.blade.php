@@ -1,9 +1,23 @@
-<div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+<header>
+    <a href="/" class="logo">FoodShare</a>
     <div>
-        {{ $logo }}
-    </div>
+        @if (Route::has('login'))
+        @auth
+        @include('layouts.navigation')
+        @else
+        <a class="linkNav right" href="{{ route('login') }}" class="">Log in</a>
 
-    <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-        {{ $slot }}
+        @if (Route::has('register'))
+        <a class="linkNav right" href="{{ route('register') }}">Register</a>
+        @endif
+        @endauth
+        @endif
     </div>
-</div>
+</header>
+<main>
+    <div class="authFormPosition">
+        <div class="bgAuthForm">
+            {{ $slot }}
+        </div>
+    </div>
+</main>
