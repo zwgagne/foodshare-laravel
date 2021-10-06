@@ -27,9 +27,9 @@
         </div>
     </header>
     <main>
-        <h2>Accueil</h2>
-        <div class="pagination">
-            {{$posts->links() }}
+        <h1>Accueil</h1>
+        <div>
+            {{$posts->links('paginationStyle') }}
         </div>
         <section class="showFoodSec">
             @foreach ($posts as $post)
@@ -63,6 +63,9 @@
             <lord-icon class="testAdd" src="https://cdn.lordicon.com/mecwbjnp.json" trigger="loop-on-hover" colors="primary:#ffffff,secondary:#ee6352" style="width:80px;height:80px">
             </lord-icon>
         </a>
+        <div>
+            {{$posts->links('paginationStyle') }}
+        </div>
     </main>
 
 

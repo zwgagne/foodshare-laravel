@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class AppController extends Controller
 {
     public function index() {
-        $posts = food::paginate(4);
+        $posts = food::paginate(9);
         return view('index', compact('posts'));
     }
 
