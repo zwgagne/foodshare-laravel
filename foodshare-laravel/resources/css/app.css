@@ -186,6 +186,14 @@ main {
 
 /* Article */
 
+.pagination{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+
 .showFoodSec {
     margin-top: 10vh;
     display: flex;
@@ -215,6 +223,7 @@ main {
 .imgHome {
     border-radius: 8px;
     width: 100%;
+    height: 50vh;
 }
 
 .foodInfoHome {

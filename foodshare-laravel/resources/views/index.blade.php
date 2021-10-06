@@ -28,9 +28,13 @@
     </header>
     <main>
         <h2>Accueil</h2>
+        <div class="pagination">
+            {{$posts->links() }}
+        </div>
         <section class="showFoodSec">
             @foreach ($posts as $post)
             <article class="foodArticle">
+
                 <div class="card">
                     <div class="sizeImg">
                         <img class="imgHome" src="/storage/img/{{$post->image}}" alt="repas">

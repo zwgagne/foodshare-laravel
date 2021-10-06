@@ -13,6 +13,14 @@
                 <x-label for="email" :value="__('Email')" />
                 <x-input id="email" type="email" name="email" :value="old('email')" required />
             </div>
+            <div>
+                <x-label for="address" :value="__('Address')" />
+                <x-input id="address" type="text" name="address" :value="old('address')" required autofocus />
+            </div>
+            <div>
+                <x-label for="city" :value="__('Ville')" />
+                <x-input id="city" type="text" name="city" :value="old('city')" required autofocus />
+            </div>
             <!-- Password -->
             <div>
                 <x-label for="password" :value="__('Password')" />
