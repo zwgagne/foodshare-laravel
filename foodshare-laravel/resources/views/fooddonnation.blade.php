@@ -5,13 +5,28 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div>
-            <div>
-                <div>
-                    Vous êtes connecté!
+    <main class="mainDonnation">
+        <section class="containerFormDon">
+            <form action="" method="POST" >
+            {{ csrf_field() }}
+                <div class="containerInputDon">
+                    <x-label for="imageid" :value="__('Insérer une photo du don')" />
+                    <x-input id="imageid" type="file" name="image" accept="image/png, image/jpeg"  autofocus />
                 </div>
-            </div>
-        </div>
-    </div>
+                <div class="descriptionDon">
+                    <label for="descriptionid">Description</label>
+                    <textarea name="description" id="descriptionid" cols="60" rows="10" maxlength="255" placeholder="Entre une courte description de la donation (Maximum 255 caractère)"></textarea>
+                </div>
+                <div class="containerInputDon">
+                    <x-label for="created_atid" :value="__('Date / Heure Du dépôt')" />
+                    <x-input id="created_atid" type="datetime-local" name="created_at" required />
+                </div>
+                <div>
+                    <input class="hiddenEl" type="text" name="meteo" value="20" hidden>
+                    <input class="hiddenEl" type="text" name="user_id" value="{{Auth::user()->id}}" hidden>
+                </div>
+                <input type="submit" value="Soumettre">
+            </form>
+        </section>
+    </main>
 </x-app-layout>

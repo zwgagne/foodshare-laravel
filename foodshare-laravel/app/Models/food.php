@@ -15,4 +15,17 @@ class food extends Model
     {
         return $this->hasMany(food::class);
     }
+
+    protected $fillable = [
+        'description',
+        'email',
+        'address',
+        'city',
+        'password',
+        'updated_at',
+        'created_at',
+        'image',
+        'user_id',
+        'meteo',
+    ];
 }

@@ -233,7 +233,7 @@ main {
     border: none;
 }
 
-.bhtDelete {
+.btnDelete {
     background-color: transparent;
     border: none;
 }
@@ -246,4 +246,150 @@ main {
     bottom: 3vh;
     left: 100%;
     margin-right: -30px;
+}
+
+/* Profil */
+
+.mainProfil{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.containerList{
+    width: 18%;
+    background-color: #333e5273;
+    border-radius: 8px;
+    padding: 20px;
+}
+.containerList>h3{
+    margin-left: 10px;
+    padding-bottom: 10px;
+    border-bottom: solid 3px #FFFFFF;
+}
+.ContainerListDon{
+}
+.listDonnationItem{
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    border-bottom: solid 2px #EE6352;
+}
+
+.containerCenter{
+    width: 59%;
+}
+.containerInfoProfil{
+    width: 18%;
+    background-color: blueviolet;
+}
+
+
+.containerModalDel{
+    position: absolute;
+    z-index: 1;
+    background-color: #252E3D;
+    border: solid 1px #EE6352;
+    border-radius: 8px;
+    width: 520px;
+    height: 250px;
+    top: 10%;
+    left: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+.displayON{
+    display: flex;
+}
+.displayOFF{
+    display: none;
+}
+.containerModalDel>h4{
+    font-size: 1.8rem;
+    width: 100%;
+    height: 20%;
+    margin: 0px;
+}
+.containerModalBtn{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.ModalDelBtn{
+    background-color: transparent;
+    border: solid 3px #FFFFFF;
+    border-radius: 8px;
+    color: #FFFFFF;
+    padding: 0px 30px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.ModalDelBtn:hover{
+    background-color: #FFFFFF;
+    color: #252E3D;
+}
+.ModalCancelBtn{
+    background-color: transparent;
+    border: solid 3px #EE6352;
+    border-radius: 8px;
+    color: #EE6352;
+    padding: 0px 30px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.ModalCancelBtn:hover{
+    background-color: #EE6352;
+    color: #FFFFFF;
+}
+
+/* Add food */
+
+.mainDonnation{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.containerFormDon{
+    padding: 50px;
+    background-color: #333e5273;
+    border-radius: 8px;
+}
+
+.containerInputDon{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+.containerInputDon>label{
+    width: 100%;
+    margin-bottom: 15px;
+}
+.descriptionDon{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+.descriptionDon>label{
+    width: 100%;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+.descriptionDon>textarea{
+    background-color: #1a202c;
+    resize: none;
+    border-radius: 8px;
+    border: solid 1px transparent;
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    padding: 10px;
+}
+.descriptionDon>textarea:hover{
+    border: solid 1px #EE6352;
+    background-color: #71798873;
+}
+.hiddenEl{
+    display: none;
 }

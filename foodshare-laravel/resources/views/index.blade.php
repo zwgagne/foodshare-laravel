@@ -27,45 +27,47 @@
         </div>
     </header>
     <main>
-        <h2>Accueil</h2>
-        <section>
-            <article>
-                @foreach ($posts as $post)
-                <div>
-                    <img src="asset('img/{{$post->image}}')" alt="repas">
-                </div>
-                <div>
-                    <p><b>Description: </b>{{ $post->description }}</p>
-                    <span>Température</span>
+        <h1>Accueil</h1>
+        <div>
+            {{$posts->links('paginationStyle') }}
+        </div>
+        <section class="showFoodSec">
+            @foreach ($posts as $post)
+            <article class="foodArticle">
 
                 <div class="card">
                     <div class="sizeImg">
                         <img class="imgHome" src="/storage/img/{{$post->image}}" alt="repas">
                     </div>
                     <div class="foodInfoHome">
-                        <h3><b>Publié par: </b> {{$post->user_id}}</h3>
+                        <h3><b>Publié par: </b> {{$post->name}}</h3>
                         <p><b>Description: </b>{{ $post->description }}</p>
                         <span>Temérature: {{$post->meteo}} °C</span>
-                        <p><b>Lieu: </b> Québec</p>
+                        <p><b>Lieu: </b> {{$post->city}}</p>
                     </div>
+                    @auth
                     <div class="btnPositionHomeArt">
                         <button name="" class="btnReserve">
                             <lord-icon src="https://cdn.lordicon.com/mecwbjnp.json" trigger="click" colors="primary:#ffffff,secondary:#ee6352" style="width:50px;height:50px">
                             </lord-icon>
                         </button>
-                        <button name="" class="bhtDelete">
-                            <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop-on-hover" colors="primary:#ffffff,secondary:#ee6352" style="width:50px;height:50px">
-                            </lord-icon>
-                        </button>
                     </div>
+                    @endauth
                 </div>
             </article>
+            @empty($posts)
+            <p>Oups! Il semble ne plus avoir de denrée!</p>
+            <lord-icon src="https://cdn.lordicon.com/yyecuati.json" trigger="loop" colors="primary:#ffffff,secondary:#ee6352" style="width:250px;height:250px">
+            </lord-icon>
+            @endempty
             @endforeach
         </section>
-        <a href="/FoodDonnation">
+        @auth
+        <a href="{{ route('add.donnation') }}">
             <lord-icon class="testAdd" src="https://cdn.lordicon.com/mecwbjnp.json" trigger="loop-on-hover" colors="primary:#ffffff,secondary:#ee6352" style="width:80px;height:80px">
             </lord-icon>
         </a>
+        @endauth
         <div>
             {{$posts->links('paginationStyle') }}
         </div>

@@ -8,13 +8,10 @@ use Illuminate\Http\Request;
 class AppController extends Controller
 {
     public function index() {
-        $posts = food::paginate(9);
+        $posts = food::where('is_reserved', '=', '0')->latest()->paginate(9);
         return view('index', compact('posts'));
     }
 
-    public function fooddonnation() {
-        return view("fooddonnation");
-    }
     
     public function profil() {
         return view("profil");
