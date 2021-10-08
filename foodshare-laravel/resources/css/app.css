@@ -257,17 +257,18 @@ main {
 }
 .containerList{
     width: 18%;
+    height: auto;
     background-color: #333e5273;
     border-radius: 8px;
     padding: 20px;
+    box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.48);
 }
 .containerList>h3{
     margin-left: 10px;
     padding-bottom: 10px;
     border-bottom: solid 3px #FFFFFF;
 }
-.ContainerListDon{
-}
+
 .listDonnationItem{
     display: flex;
     justify-content: space-between;
@@ -277,10 +278,51 @@ main {
 
 .containerCenter{
     width: 59%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.containerCenter>h2{
+    width: 100%;
+    text-align: center;
+    border-bottom: solid 3px #FFFFFF;
+    margin: 0px 40px;
 }
 .containerInfoProfil{
     width: 18%;
-    background-color: blueviolet;
+    background-color: #333e5273;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.foodArticleReserved {
+    width: 25%;
+    margin: 20px;
+    border-radius: 8px;
+    border: solid 1px transparent;
+}
+.cardProfil {
+    background-color: #333e5273;
+    border-radius: 8px;
+    margin: 20px;
+    padding-bottom: 5px;
+}
+.btnTakeOut{
+    color: #EE6352;
+    font-size: 1.7rem;
+    font-weight: bold;
+    background: transparent;
+    border: solid 4px #EE6352;
+    border-radius: 8px;
+    width: 100%;
+}
+.btnTakeOut:hover{
+    border: solid 4px #FFFFFF;
+}
+.btnTakeOut:active{
+    color: #FFFFFF;
+    background-color: #EE6352;
 }
 
 

@@ -7,6 +7,7 @@
 
     <main class="mainDonnation">
         <section class="containerFormDon">
+        <x-auth-validation-errors :errors="$errors" />
             <form action="" method="POST" >
             {{ csrf_field() }}
                 <div class="containerInputDon">
@@ -15,7 +16,7 @@
                 </div>
                 <div class="descriptionDon">
                     <label for="descriptionid">Description</label>
-                    <textarea name="description" id="descriptionid" cols="60" rows="10" maxlength="255" placeholder="Entre une courte description de la donation (Maximum 255 caractère)"></textarea>
+                    <textarea name="description" id="descriptionid" cols="60" rows="10" maxlength="255" placeholder="Entre une courte description de la donation (Maximum 255 caractère)" required></textarea>
                 </div>
                 <div class="containerInputDon">
                     <x-label for="created_atid" :value="__('Date / Heure Du dépôt')" />
