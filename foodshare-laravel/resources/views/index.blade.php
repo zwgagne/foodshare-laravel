@@ -17,10 +17,10 @@
             @auth
             @include('layouts.navigation')
             @else
-            <a class="linkNav" href="{{ route('login') }}">Log in</a>
+            <a class="linkNav" href="{{ route('login') }}">Se connecter</a>
 
             @if (Route::has('register'))
-            <a class="linkNav" href="{{ route('register') }}">Register</a>
+            <a class="linkNav" href="{{ route('register') }}">S'enregistrer</a>
             @endif
             @endauth
             @endif
@@ -42,21 +42,23 @@
                     <div class="foodInfoHome">
                         <h3><b>Publié par: </b> {{$post->name}}</h3>
                         <p><b>Description: </b>{{ $post->description }}</p>
-                        <span>Temérature: {{$post->meteo}} °C</span>
+                        <span>Température: {{$post->meteo}} °C</span>
                         <p><b>Lieu: </b> {{$post->city}}</p>
                     </div>
                     @auth
                     <div class="btnPositionHomeArt">
+                        <form action="" method="POST">  
                         <button name="" class="btnReserve">
                             <lord-icon src="https://cdn.lordicon.com/mecwbjnp.json" trigger="click" colors="primary:#ffffff,secondary:#ee6352" style="width:50px;height:50px">
                             </lord-icon>
                         </button>
+                        </form>
                     </div>
                     @endauth
                 </div>
             </article>
             @empty($posts)
-            <p>Oups! Il semble ne plus avoir de denrée!</p>
+            <p>Oups! Il semble ne plus y avoir de denrée!</p>
             <lord-icon src="https://cdn.lordicon.com/yyecuati.json" trigger="loop" colors="primary:#ffffff,secondary:#ee6352" style="width:250px;height:250px">
             </lord-icon>
             @endempty
