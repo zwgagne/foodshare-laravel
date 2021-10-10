@@ -7,7 +7,7 @@
 
     <main class="mainProfil">
         <section class="containerList">
-            <h3>Vos donnations</h3>
+            <h3>Vos donations</h3>
 
             <div>
                 <ul class="ContainerListDon">

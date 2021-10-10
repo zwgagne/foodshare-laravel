@@ -7,7 +7,7 @@
         <a class="paginationNav" href="{{$paginator->previousPageUrl()}}">Précédent</a>
         <a href=""></a>
 
-        <a class="paginationNav" href="{{$paginator->nextPageUrl()}}">Suivent</a>
+        <a class="paginationNav" href="{{$paginator->nextPageUrl()}}">Suivant</a>
     </div>
 </div>
 
