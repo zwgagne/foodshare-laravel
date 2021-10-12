@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class AppController extends Controller
 {
     public function index() {
+
         $posts = food::where('is_reserved', '=', '0')->latest()->paginate(9);
         return view('index', compact('posts'));
     }
@@ -29,9 +30,15 @@ class AppController extends Controller
     }
     
     public function profil() {
+        
         $userCon = Auth::user()->id;
+        $foodID = Auth::user()->food_id;
+        $listDon = food::where('user_id', $userCon )->get();
+
+        $foodReserved = food::where('id', $foodID)->get();
         $post = User::find($userCon);
-        return View('profil', compact('post'));
+
+        return View('profil', compact('post', 'listDon', 'foodReserved'));
     }
 
 }

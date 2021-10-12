@@ -16,6 +16,11 @@ class food extends Model
         return $this->hasMany(food::class);
     }
 
+    public function InfoUser()
+    {
+        return $this->belongsTo(user::class);
+    }
+
     protected $fillable = [
         'description',
         'email',

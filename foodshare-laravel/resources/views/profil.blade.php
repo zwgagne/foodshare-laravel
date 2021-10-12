@@ -10,30 +10,16 @@
             <h3>Vos donations</h3>
 
             <div>
+                @foreach ($listDon as $list)
                 <ul class="ContainerListDon">
-                    <li class="listDonnationItem">Des pommes de terre
+                    <li class="listDonnationItem">{{$list->description}}
                         <button name="" id="btnDelete" class="btnDelete">
                             <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop-on-hover" colors="primary:#ffffff,secondary:#ee6352" style="width:50px;height:50px">
                             </lord-icon>
                         </button>
                     </li>
                 </ul>
-                <ul>
-                    <li class="listDonnationItem">Pain de viande
-                        <button name="" class="btnDelete">
-                            <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop-on-hover" colors="primary:#ffffff,secondary:#ee6352" style="width:50px;height:50px">
-                            </lord-icon>
-                        </button>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="listDonnationItem">Pizza au canard
-                        <button name="" class="btnDelete">
-                            <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop-on-hover" colors="primary:#ffffff,secondary:#ee6352" style="width:50px;height:50px">
-                            </lord-icon>
-                        </button>
-                    </li>
-                </ul>
+                @endforeach
             </div>
 
 
@@ -41,7 +27,7 @@
         <section class="containerCenter">
             <h2>Votre réservation</h2>
             <div class="cardProfil">
-                @foreach ($post->cardReservedInfo as $foodInfo)
+                @foreach ($foodReserved as $foodInfo)
                 <div class="sizeImg">
                     <img class="imgHome" src="/storage/img/{{$foodInfo->image}}" alt="repas">
                 </div>
