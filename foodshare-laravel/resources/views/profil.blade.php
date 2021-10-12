@@ -41,14 +41,15 @@
         <section class="containerCenter">
             <h2>Votre réservation</h2>
             <div class="cardProfil">
+                @foreach ($post->cardReservedInfo as $foodInfo)
                 <div class="sizeImg">
-                    <img class="imgHome" src="/storage/img/cerise.jpg" alt="repas">
+                    <img class="imgHome" src="/storage/img/{{$foodInfo->image}}" alt="repas">
                 </div>
                 <div class="foodInfoHome">
-                    <h3><b>Publié par: </b> </h3>
-                    <p><b>Description: </b></p>
-                    <span>Temérature: °C</span>
-                    <p><b>Lieu: </b> </p>
+                    <p><b>Description: </b>{{$foodInfo->description}}</p>
+                    <b><span>Température: {{$foodInfo->meteo}} °C</span><b>
+                    <p><b>Lieu: </b> {{$post->city}}</p>
+                    <p><b>Situé au: </b> {{$post->address}}</p>
                 </div>
                 <div class="btnPositionHomeArt">
                     <button name="" class="btnTakeOut">
@@ -56,6 +57,7 @@
                         </lord-icon>Don récupéré
                     </button>
                 </div>
+                @endforeach
             </div>
         </section>
 

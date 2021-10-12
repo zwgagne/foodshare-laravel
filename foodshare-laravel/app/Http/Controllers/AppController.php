@@ -29,6 +29,9 @@ class AppController extends Controller
     }
     
     public function profil() {
-        return view("profil");
+        $userCon = Auth::user()->id;
+        $post = User::find($userCon);
+        return View('profil', compact('post'));
     }
+
 }
