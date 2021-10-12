@@ -5,7 +5,8 @@ use App\Http\Controllers\AppController;
 use App\Http\Controllers\AddDonnationController; 
 
 Route::get('/', [AppController::class, 'index']);
-Route::post('/', [AppController::class, 'store'])->middleware(['auth']);
+
+Route::post('/update', [AppController::class, 'update'])->middleware(['auth']);
 
 Route::get('/profil', [AppController::class, 'profil'])->middleware(['auth']);
 

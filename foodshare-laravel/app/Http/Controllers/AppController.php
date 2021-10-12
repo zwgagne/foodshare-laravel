@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\food;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AppController extends Controller
 {
@@ -12,17 +14,18 @@ class AppController extends Controller
         return view('index', compact('posts'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $request->validate([
-            'image' => 'required',
-            'description' => 'required|max:255',
-            'created_at' => 'required',
-            'user_id' => 'required',
-            'meteo' => 'required',
-        ]);
+        $id = $request->input("id");
 
-        $post = Post::find($id);
+        $food = food::find($id);
+        $food->is_reserved=1;
+        $food->save();
+
+        $user = User::find(Auth::user()->id);
+        $user->food_id=$id;
+        $user->save();
+        return redirect("/");
     }
     
     public function profil() {
