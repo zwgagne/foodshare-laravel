@@ -12,6 +12,18 @@ class AppController extends Controller
         return view('index', compact('posts'));
     }
 
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'image' => 'required',
+            'description' => 'required|max:255',
+            'created_at' => 'required',
+            'user_id' => 'required',
+            'meteo' => 'required',
+        ]);
+
+        $post = Post::find($id);
+    }
     
     public function profil() {
         return view("profil");

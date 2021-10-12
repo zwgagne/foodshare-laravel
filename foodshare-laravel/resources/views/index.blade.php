@@ -47,8 +47,9 @@
                     </div>
                     @auth
                     <div class="btnPositionHomeArt">
-                        <form action="" method="POST">  
-                        <button name="" class="btnReserve">
+                        <form action="" method="POST">
+                        {{ csrf_field() }}  
+                        <button value="{{$post->id}}" type="submit" name="food_id" class="btnReserve">
                             <lord-icon src="https://cdn.lordicon.com/mecwbjnp.json" trigger="click" colors="primary:#ffffff,secondary:#ee6352" style="width:50px;height:50px">
                             </lord-icon>
                         </button>
