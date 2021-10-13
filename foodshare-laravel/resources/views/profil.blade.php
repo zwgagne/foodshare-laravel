@@ -8,7 +8,6 @@
     <main class="mainProfil">
         <section class="containerList">
             <h3>Vos donations</h3>
-
             <div>
                 @foreach ($listDon as $list)
                 <ul class="ContainerListDon">
@@ -21,8 +20,6 @@
                 </ul>
                 @endforeach
             </div>
-
-
         </section>
         <section class="containerCenter">
             <h2>Votre réservation</h2>
@@ -34,8 +31,8 @@
                 <div class="foodInfoHome">
                     <p><b>Description: </b>{{$foodInfo->description}}</p>
                     <b><span>Température: {{$foodInfo->meteo}} °C</span><b>
-                    <p><b>Lieu: </b> {{$post->city}}</p>
-                    <p><b>Situé au: </b> {{$post->address}}</p>
+                            <p><b>Lieu: </b> {{$post->city}}</p>
+                            <p><b>Situé au: </b> {{$post->address}}</p>
                 </div>
                 <div class="btnPositionHomeArt">
                     <button name="" class="btnTakeOut">
@@ -46,14 +43,14 @@
                 @endforeach
             </div>
         </section>
-
-        </section>
-        <section class="containerInfoProfil">
-            <h3>Gestion compte</h3>
-            ICI LE FORM QUI PERMET DE MODIFIER LE PROFIL DE L'UTILISATEUR ET LA POSSIBILITÉ DE SUPPRIMER SON COMPTE
-        </section>
-
+        
     </main>
+    <section class="containerInfoProfil">
+        <h3>Gestion compte</h3>
+        <div class="formEditProfil">
+            ICI LE FORM QUI PERMET DE MODIFIER LE PROFIL DE L'UTILISATEUR ET LA POSSIBILITÉ DE SUPPRIMER SON COMPTE
+        </div>
+    </section>
     <div id="Modal" class="displayOFF containerModalDel ">
         <h4>Êtes vous sûr de supprimer cet élément ?</h4>
         <lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop-on-hover" colors="primary:#ffffff,secondary:#ee6352" style="width:100px;height:100px">

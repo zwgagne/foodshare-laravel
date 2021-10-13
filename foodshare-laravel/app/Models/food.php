@@ -18,7 +18,7 @@ class food extends Model
 
     public function InfoUser()
     {
-        return $this->belongsTo(user::class);
+        return $this->belongsTo(User::class);
     }
 
     protected $fillable = [

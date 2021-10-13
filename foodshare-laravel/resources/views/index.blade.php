@@ -40,7 +40,7 @@
                         <img class="imgHome" src="/storage/img/{{$post->image}}" alt="repas">
                     </div>
                     <div class="foodInfoHome">
-                        <h3><b>Publié par: </b> {{$post->name}}</h3>
+                        <h3><b>Publié par: </b> {{$post->id}}</h3>
                         <p><b>Description: </b>{{ $post->description }}</p>
                         <span>Température: {{$post->meteo}} °C</span>
                         <p><b>Lieu: </b> {{$post->city}}</p>

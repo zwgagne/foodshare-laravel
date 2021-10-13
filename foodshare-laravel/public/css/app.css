@@ -15,7 +15,7 @@ body {
   margin: 0px;
 }
 
-h1{
+h1 {
   margin-top: 10vh;
   font-size: 1.8rem;
 }
@@ -79,12 +79,12 @@ main {
   box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.48);
 }
 
-.menuLine{
+.menuLine {
   border-right: solid 2px #FFFFFF;
   margin-right: 20px;
 }
 
-.navUserMenu{
+.navUserMenu {
   display: flex;
   justify-content: space-between;
   align-self: center;
@@ -96,11 +96,11 @@ main {
   padding: 8px;
 }
 
-.navFormLogoutPosition{
+.navFormLogoutPosition {
   padding: 8px;
 }
 
-.iconsSvgLogout{
+.iconsSvgLogout {
   width: 3vh;
   margin-right: 5px;
   fill: #FFFFFF;
@@ -114,35 +114,36 @@ main {
   padding: 10px;
 }
 
-.iconsSvgLogout:hover, .btnLogout:hover{
+.iconsSvgLogout:hover,
+.btnLogout:hover {
   fill: #1a202c;
   color: #1a202c;
 }
 
 /* Auth */
 
-.authFormPosition{
+.authFormPosition {
   display: flex;
   justify-content: center;
   margin-top: 20vh;
 }
 
-.bgAuthForm{
+.bgAuthForm {
   background-color: #2a344673;
   padding: 5vh;
   border-radius: 8px;
   box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.48);
 }
 
-.authSessionInfo{
+.authSessionInfo {
   color: #EE6352;
 }
 
-.authLabel{
+.authLabel {
   font-size: 1.6rem;
 }
 
-.authInput{
+.authInput {
   background-color: #1a202c;
   padding: 1vh;
   margin-bottom: 15px;
@@ -153,30 +154,30 @@ main {
 }
 
 .authInput:active,
-.authInput:hover{
+.authInput:hover {
   border: solid 1px #EE6352;
   background-color: #333e5273;
 }
 
-.authInputCheck{
+.authInputCheck {
   margin: 15px 0px 20px 0px;
 }
 
-.authInputCheckTxt{
+.authInputCheckTxt {
   font-size: 1.3rem;
 }
 
-.authAForgotPassword{
+.authAForgotPassword {
   text-decoration: none;
   font-size: 1.3rem;
   color: #EE6352;
 }
 
-.authAForgotPassword:hover{
+.authAForgotPassword:hover {
   border-bottom: solid 1px #EE6352;
 }
 
-.authBtn{
+.authBtn {
   margin-top: 3vh;
   background-color: transparent;
   color: #EE6352;
@@ -187,19 +188,19 @@ main {
   width: 100%;
 }
 
-.authBtn:hover{
+.authBtn:hover {
   background-color: #EE6352;
   color: #FFFFFF;
 }
 
-.authForgotTxtInfo{
+.authForgotTxtInfo {
   text-align: center;
   width: 70vh;
   font-size: 1.6rem;
   margin-bottom: 8%;
 }
 
-.authForgotEmail{
+.authForgotEmail {
   text-align: center;
 }
 
@@ -269,14 +270,14 @@ main {
 
 /* Profil */
 
-.mainProfil{
+.mainProfil {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.containerList{
-  width: 18%;
+.containerList {
+  width: 28%;
   height: auto;
   background-color: #333e5273;
   border-radius: 8px;
@@ -284,20 +285,25 @@ main {
   box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.48);
 }
 
-.containerList>h3{
+.containerList>h3 {
   margin-left: 10px;
   padding-bottom: 10px;
   border-bottom: solid 3px #FFFFFF;
 }
 
-.listDonnationItem{
+.ContainerListDon {
+  list-style-type: none;
+  padding: 20px;
+}
+
+.listDonnationItem {
   display: flex;
   justify-content: space-between;
   align-self: center;
   border-bottom: solid 2px #EE6352;
 }
 
-.containerCenter{
+.containerCenter {
   width: 59%;
   height: auto;
   display: flex;
@@ -305,15 +311,28 @@ main {
   justify-content: center;
 }
 
-.containerCenter>h2{
+.containerCenter>h2 {
   width: 100%;
+  height: 5%;
   text-align: center;
   border-bottom: solid 3px #FFFFFF;
   margin: 0px 40px;
 }
 
-.containerInfoProfil{
-  width: 18%;
+.containerInfoProfil {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.containerInfoProfil>h3 {
+  width: 100%;
+  text-align: center;
+}
+
+.formEditProfil {
+  width: 60%;
   background-color: #333e5273;
   border-radius: 8px;
   padding: 20px;
@@ -333,7 +352,7 @@ main {
   padding-bottom: 5px;
 }
 
-.btnTakeOut{
+.btnTakeOut {
   color: #EE6352;
   font-size: 1.7rem;
   font-weight: bold;
@@ -343,16 +362,16 @@ main {
   width: 100%;
 }
 
-.btnTakeOut:hover{
+.btnTakeOut:hover {
   border: solid 4px #FFFFFF;
 }
 
-.btnTakeOut:active{
+.btnTakeOut:active {
   color: #FFFFFF;
   background-color: #EE6352;
 }
 
-.containerModalDel{
+.containerModalDel {
   position: absolute;
   z-index: 1;
   background-color: #252E3D;
@@ -369,29 +388,29 @@ main {
   text-align: center;
 }
 
-.displayON{
+.displayON {
   display: flex;
 }
 
-.displayOFF{
+.displayOFF {
   display: none;
 }
 
-.containerModalDel>h4{
+.containerModalDel>h4 {
   font-size: 1.8rem;
   width: 100%;
   height: 20%;
   margin: 0px;
 }
 
-.containerModalBtn{
+.containerModalBtn {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.ModalDelBtn{
+.ModalDelBtn {
   background-color: transparent;
   border: solid 3px #FFFFFF;
   border-radius: 8px;
@@ -401,12 +420,12 @@ main {
   font-weight: bold;
 }
 
-.ModalDelBtn:hover{
+.ModalDelBtn:hover {
   background-color: #FFFFFF;
   color: #252E3D;
 }
 
-.ModalCancelBtn{
+.ModalCancelBtn {
   background-color: transparent;
   border: solid 3px #EE6352;
   border-radius: 8px;
@@ -416,49 +435,49 @@ main {
   font-weight: bold;
 }
 
-.ModalCancelBtn:hover{
+.ModalCancelBtn:hover {
   background-color: #EE6352;
   color: #FFFFFF;
 }
 
 /* Add food */
 
-.mainDonnation{
+.mainDonnation {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.containerFormDon{
+.containerFormDon {
   padding: 50px;
   background-color: #333e5273;
   border-radius: 8px;
 }
 
-.containerInputDon{
+.containerInputDon {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 15px;
 }
 
-.containerInputDon>label{
+.containerInputDon>label {
   width: 100%;
   margin-bottom: 15px;
 }
 
-.descriptionDon{
+.descriptionDon {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 18px;
 }
 
-.descriptionDon>label{
+.descriptionDon>label {
   width: 100%;
   font-size: 1.5rem;
   margin-bottom: 15px;
 }
 
-.descriptionDon>textarea{
+.descriptionDon>textarea {
   background-color: #1a202c;
   resize: none;
   border-radius: 8px;
@@ -468,11 +487,39 @@ main {
   padding: 10px;
 }
 
-.descriptionDon>textarea:hover{
+.descriptionDon>textarea:hover {
   border: solid 1px #EE6352;
   background-color: #71798873;
 }
 
-.hiddenEl{
+.hiddenEl {
   display: none;
 }
+
+@media screen and (max-width: 1100px) {
+  .containerList {
+    width: 100%;
+  }
+
+  .containerCenter {
+    width: 100%;
+    margin-top: 20%;
+  }
+
+  .foodArticle {
+    width: 40%;
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  main{
+    margin: 20px 10px;
+  }
+
+  .foodArticle {
+    width: 100%;
+    margin: 10px;
+  }
+}
+
