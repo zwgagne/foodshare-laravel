@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\food;
+use Intervention\Image\Facades\Image as InterventionImage;
+use Illuminate\Support\Facades\Storage;
 
 class AddDonnationController extends Controller
 {
@@ -43,10 +45,18 @@ class AddDonnationController extends Controller
             'meteo' => 'required',
         ]);
 
-        $path = basename($request->image->store('img', 'public'));
+        $path = "";
+        
+        if ($request->image) {
+            $path = basename($request->image->store('img', 'public'));
+
+            // Enregistre l'image réduite dans le dossier '/storage/app/public/thumbs'
+            $image = InterventionImage::make($request->image)->widen(500)->encode();
+            Storage::put('public/img/' . $path, $image);
+        }
 
         $post = new food();
-        $post->image = $request->image;
+        $post->image = $path;
         $post->description = $request->description;
         $post->created_at = $request->created_at;
         $post->user_id = $request->user_id;
