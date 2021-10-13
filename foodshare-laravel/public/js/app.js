@@ -2104,23 +2104,23 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ (() => {
 
 "use strict";
- //var delaction = document.getElementsByClassName('btnDelete');
-//
-//delaction = document.addEventListener('click', function () {
-//    var show = document.getElementById('Modal')
-//    show.classList.remove("displayOFF")
-//    show.classList.add("displayON")
-//    console.log('dd')
-//});
-//
-//var cancelact = document.getElementById('modalClose');
-//
-//cancelact = document.addEventListener('click', function() {
-//    var show2 = document.getElementById('Modal')
-//    show2.classList.remove("displayON")
-//    show2.classList.add("displayOFF")
-//    console.log('oui')
-//});
+
+
+function onClick(href) {
+  fetch(href, {
+    headers: {
+      "X-CSRF-TOKEN": f37b40319956a02fef274656bbfbfb11
+    },
+    method: 'DELETE'
+  }).then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    console.log('data', data.id);
+    document.getElementById('post-' + data.id).remove();
+  })["catch"](function (error) {
+    console.log('error', error);
+  });
+}
 
 /***/ }),
 

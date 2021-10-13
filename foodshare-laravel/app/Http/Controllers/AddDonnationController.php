@@ -46,7 +46,7 @@ class AddDonnationController extends Controller
         $path = basename($request->image->store('img', 'public'));
 
         $post = new food();
-        $post->image = $request->image;
+        $post->image = $path;
         $post->description = $request->description;
         $post->created_at = $request->created_at;
         $post->user_id = $request->user_id;
