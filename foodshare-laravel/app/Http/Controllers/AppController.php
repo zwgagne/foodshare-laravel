@@ -43,4 +43,10 @@ class AppController extends Controller
         return View('profil', compact('post', 'listDon', 'foodReserved'));
     }
 
+    public function destroy($id) {
+        food::destroy($id);
+        return redirect('/');
+
+    }
+
 }

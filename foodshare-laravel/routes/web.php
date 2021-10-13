@@ -5,8 +5,8 @@ use App\Http\Controllers\AppController;
 use App\Http\Controllers\AddDonnationController; 
 
 Route::get('/', [AppController::class, 'index']);
-
 Route::post('/update', [AppController::class, 'update'])->middleware(['auth']);
+Route::delete('/food/{id}', [AppController::class, 'destroy'])->name('delete_food');
 
 Route::get('/profil', [AppController::class, 'profil'])->middleware(['auth']);
 

@@ -35,10 +35,14 @@
                             <p><b>Situé au: </b> {{$post->address}}</p>
                 </div>
                 <div class="btnPositionHomeArt">
+                    <form action="{{ url('delete_food/' . $foodInfo->id) }}" method="POST">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
                     <button name="" class="btnTakeOut">
                         <lord-icon src="https://cdn.lordicon.com/lthhecik.json" trigger="hover" colors="primary:#ffffff,secondary:#ee6352" style="width:80px;height:80px">
                         </lord-icon>Don récupéré
                     </button>
+                    </form>
                 </div>
                 @endforeach
             </div>
