@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le : ven. 08 oct. 2021 à 15:46
--- Version du serveur :  5.7.31
--- Version de PHP : 7.4.9
+-- Hôte : localhost:8889
+-- Généré le : mer. 13 oct. 2021 à 15:40
+-- Version du serveur : 5.7.34
+-- Version de PHP : 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,19 +27,16 @@ SET time_zone = "+00:00";
 -- Structure de la table `food`
 --
 
-DROP TABLE IF EXISTS `food`;
-CREATE TABLE IF NOT EXISTS `food` (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `food` (
+  `id` bigint(20) UNSIGNED NOT NULL,
   `description` varchar(255) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
   `meteo` int(11) DEFAULT NULL,
   `user_id` bigint(20) UNSIGNED DEFAULT NULL,
   `is_reserved` tinyint(1) DEFAULT '0',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `food`
@@ -68,9 +65,8 @@ INSERT INTO `food` (`id`, `description`, `image`, `meteo`, `user_id`, `is_reserv
 -- Structure de la table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `email_verified_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -80,20 +76,52 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(255) NOT NULL,
   `remember_token` varchar(100) NOT NULL DEFAULT '',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  KEY `food_id` (`food_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `address`, `city`, `food_id`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'zac', 'zac@email.com', '2021-09-24 16:20:20', '42 rue des poivrons', 'Rimouski', 1, '12345678', '', '2021-09-24 16:22:07', '2021-09-24 16:22:07'),
+(1, 'zac', 'zac@email.com', '2021-09-24 16:20:20', '42 rue des poivrons', 'Rimouski', 1, '12345', '', '2021-09-24 16:22:07', '2021-09-24 16:22:07'),
 (2, 'root', 'root@root.ca', '2021-10-07 22:06:27', '7584 Rue Patate', 'Québec', 2, '$2y$10$JnTcjwm..5dhbeiGMgx8Tebag.Wq6AOeZRMQdUlwzmqOJ/yFSPXqe', '', '2021-10-08 02:06:27', '2021-10-08 02:06:27'),
 (4, 'Paul Tester', 'paul@email.ca', '2021-10-07 22:30:43', '468 rue sans nom', 'Montréal', NULL, '$2y$10$X7pxXk2aAHczqX0Jte/PUOoWRhod.3QnX47GnxyR/ZvcLk153OMNq', '', '2021-10-08 02:30:43', '2021-10-08 02:30:43'),
 (5, 'tester', 'test@test.ca', '2021-10-08 03:26:50', '456 rue wsef', 'ron', NULL, '$2y$10$Dhs.uhhzKPIinf0bZzaS5e5f5R1u88H.fZckQGC1JdLp1Y9n2/joO', '', '2021-10-08 07:26:50', '2021-10-08 07:26:50');
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `food`
+--
+ALTER TABLE `food`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Index pour la table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `food_id` (`food_id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `food`
+--
+ALTER TABLE `food`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT pour la table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Contraintes pour les tables déchargées
@@ -103,13 +131,13 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `address`, `cit
 -- Contraintes pour la table `food`
 --
 ALTER TABLE `food`
-  ADD CONSTRAINT `food_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `food_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL;
 
 --
 -- Contraintes pour la table `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`food_id`) REFERENCES `food` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`food_id`) REFERENCES `food` (`id`) ON DELETE SET NULL;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

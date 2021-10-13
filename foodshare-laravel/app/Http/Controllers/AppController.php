@@ -40,12 +40,12 @@ class AppController extends Controller
         $foodReserved = food::where('id', $foodID)->get();
         $post = User::find($userCon);
 
-        return View('profil', compact('post', 'listDon', 'foodReserved'));
+        return View('profil', compact('post', 'listDon', 'foodReserved', 'foodID'));
     }
 
     public function destroy($id) {
         food::destroy($id);
-        return redirect('/');
+        return redirect('/profil');
 
     }
 

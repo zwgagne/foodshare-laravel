@@ -12,10 +12,14 @@
                 @foreach ($listDon as $list)
                 <ul class="ContainerListDon">
                     <li class="listDonnationItem">{{$list->description}}
+                    <form action="{{ route('delete_food', $list->id) }}" method="POST">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
                         <button name="" id="btnDelete" class="btnDelete">
                             <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop-on-hover" colors="primary:#ffffff,secondary:#ee6352" style="width:50px;height:50px">
                             </lord-icon>
-                        </button>
+                        </button> 
+                        </form>
                     </li>
                 </ul>
                 @endforeach
@@ -35,7 +39,7 @@
                             <p><b>Situé au: </b> {{$post->address}}</p>
                 </div>
                 <div class="btnPositionHomeArt">
-                    <form action="{{ url('delete_food/' . $foodInfo->id) }}" method="POST">
+                    <form action="{{ route('delete_food', $foodID) }}" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
                     <button name="" class="btnTakeOut">
