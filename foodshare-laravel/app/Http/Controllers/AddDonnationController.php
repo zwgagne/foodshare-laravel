@@ -43,6 +43,8 @@ class AddDonnationController extends Controller
             'meteo' => 'required',
         ]);
 
+        $path = basename($request->image->store('img', 'public'));
+
         $post = new food();
         $post->image = $request->image;
         $post->description = $request->description;
