@@ -73,5 +73,12 @@ class AppController extends Controller
         return redirect("/profil")->with('status', "L'article a bien été supprimé!");
 
     }
+    
+    public function destroyUser() {
+        $userId = Auth::user()->id;
+        User::destroy($userId);
+        return redirect('/');
+
+    }
 
 }

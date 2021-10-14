@@ -10,6 +10,7 @@ Route::delete('/food/{id}', [AppController::class, 'destroy'])->name('delete_foo
 
 Route::get('/profil', [AppController::class, 'profil'])->middleware(['auth']);
 Route::put('/edit_profil', [AppController::class, 'updateProfil'])->name("edit_profil");
+Route::delete('/profil/delete', [AppController::class, 'destroyUser'])->middleware(['auth'])->name('deleteUser');
 
 
 Route::get('/food_donnation', [AddDonnationController::class, 'create'])->middleware(['auth'])->name('add.donnation');

@@ -68,22 +68,23 @@
                     {{ method_field("PUT")}}
                     <label class="labelEditProfil" for="updateName">Nom</label>
                     <input id="updateName" name="name" value="{{Auth::user()->name}}" type="text">
-                    
+
                     <label class="labelEditProfil" for="updateEmail">Email</label>
                     <input id="updateEmail" name="email" value="{{Auth::user()->email}}" type="email">
-                    
+
                     <label class="labelEditProfil" for="updateAddress">Address</label>
                     <input id="updateAddress" name="address" value="{{Auth::user()->address}}" type="text">
-                    
+
                     <label class="labelEditProfil" for="updateCity">Ville</label>
                     <input id="updateCity" name="city" value="{{Auth::user()->city}}" type="text">
-                    
+
                     <label class="labelEditProfil" for="">Mot de passe</label>
                     <input id="update" name="password" placeholder="Nouveau mot de passe" type="text">
                     <button class="btnUpdateProfil" type="submit">Mettre à jour</button>
                 </form>
             </div>
             <div class="ShowInfoProfil">
+                <h3>Information profil</h3>
                 <div class="showPositionInfoProfil">
                     <p><b>Nom: </b> {{Auth::user()->name}}</p>
                     <p><b>Email: </b> {{Auth::user()->email}}</p>
@@ -92,12 +93,13 @@
                 </div>
             </div>
             <div class="deleteUserContainer">
-                <form action="">
+                <form action="{{ route('deleteUser') }}" method="POST">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
                     <p>Supprimer votre compte</p>
                     <button class="btnDeleteCompt" type="submit">Supprimer</button>
                 </form>
             </div>
-        </div>
     </section>
     <div id="Modal" class="displayOFF containerModalDel ">
         <h4>Êtes vous sûr de supprimer cet élément ?</h4>

@@ -307,7 +307,7 @@ main {
 
 .containerCenter {
     width: 59%;
-    height: auto;
+    height: 60%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -380,7 +380,7 @@ main {
 }
 
 .ShowInfoProfil{
-    width: 40%;
+    width: 30%;
     padding: 20px 40px;
 }
 .showPositionInfoProfil{
@@ -594,6 +594,15 @@ main {
     .foodArticle {
         width: 40%;
         margin: 10px;
+    }
+    .formEditProfil {
+        width: 100%;
+    }
+    .editSecProfil{
+        width: 95%;
+    }
+    .ShowInfoProfil{
+        width: 100%;
     }
 }
 

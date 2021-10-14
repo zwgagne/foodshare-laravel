@@ -52,7 +52,7 @@ class AddDonnationController extends Controller
         if ($request->image) {
             $path = basename($request->image->store('img', 'public'));
 
-            $image = InterventionImage::make($request->image)->widen(500)->encode();
+            $image = InterventionImage::make($request->image)->widen(300)->encode();
             Storage::put('public/img/' . $path, $image);
         }
 
