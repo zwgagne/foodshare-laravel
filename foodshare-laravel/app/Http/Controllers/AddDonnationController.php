@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\food;
 use Intervention\Image\Facades\Image as InterventionImage;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
+
 
 class AddDonnationController extends Controller
 {
@@ -42,7 +45,6 @@ class AddDonnationController extends Controller
             'description' => 'required|max:255',
             'created_at' => 'required',
             'user_id' => 'required',
-            'meteo' => 'required',
         ]);
 
         $path = "";
@@ -54,16 +56,24 @@ class AddDonnationController extends Controller
             Storage::put('public/img/' . $path, $image);
         }
 
+        $city = Auth::user()->city;
+        $apiKey = 'f37b40319956a02fef274656bbfbfb11';
+        $res = Http::get("api.openweathermap.org/data/2.5/weather?q={$city}&units=metric&appid={$apiKey}");
+        $temp = $res->json()['main']['temp'];
+
         $post = new food();
         $post->image = $path;
         $post->description = $request->description;
         $post->created_at = $request->created_at;
         $post->user_id = $request->user_id;
-        $post->meteo = $request->meteo;
+        $post->meteo = $temp;
         $post->save();
 
         return redirect('/');
-    }
+    
+        }
+
+
 
     /**
      * Display the specified resource.

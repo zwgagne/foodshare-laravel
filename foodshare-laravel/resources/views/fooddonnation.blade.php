@@ -23,7 +23,7 @@
                     <x-input id="created_atid" type="datetime-local" name="created_at" required />
                 </div>
                 <div>
-                    <input class="hiddenEl" type="text" name="meteo" value="20" hidden>
+                    <input class="hiddenEl" type="text" name="meteo" value="" hidden>
                     <input class="hiddenEl" type="text" name="user_id" value="{{Auth::user()->id}}" hidden>
                 </div>
                 <input type="submit" value="Soumettre">
