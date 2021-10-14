@@ -64,7 +64,7 @@ class AppController extends Controller
         $user->password = Hash::make($request->input('password'));
         $user->save();
 
-        return redirect('/profil');
+        return redirect('/profil')->with('status', "Le profil a bien été modifié!");
     }
 
 
@@ -77,7 +77,7 @@ class AppController extends Controller
     public function destroyUser() {
         $userId = Auth::user()->id;
         User::destroy($userId);
-        return redirect('/');
+        return redirect('/')->with('status', "Votre compte a bien été supprimé!");
 
     }
 
