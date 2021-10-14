@@ -69,7 +69,8 @@ class AddDonnationController extends Controller
         $post->meteo = $temp;
         $post->save();
 
-        return redirect('/');
+        return redirect("/")->with('status', "L'article a bien été ajouté!");
+
     
         }
 

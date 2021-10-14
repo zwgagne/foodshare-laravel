@@ -19,6 +19,7 @@ class AppController extends Controller
 
     public function update(Request $request)
     {
+        if(Auth::user()->food_id == null){
         $id = $request->input("id");
 
         $food = food::find($id);
@@ -28,8 +29,14 @@ class AppController extends Controller
         $user = User::find(Auth::user()->id);
         $user->food_id=$id;
         $user->save();
-        return redirect("/");
+        
+        return redirect("/")->with('status', "L'article a bien été réservé");
+        } else {
+            return redirect("/")->with('status', "Vous avez déjà un article réservé, veuillez aller le récupérer avant d'en réserver un autre!");
+        }
+
     }
+
     
     public function profil() {
         
@@ -63,7 +70,7 @@ class AppController extends Controller
 
     public function destroy($id) {
         food::destroy($id);
-        return redirect('/profil');
+        return redirect("/profil")->with('status', "L'article a bien été supprimé!");
 
     }
 

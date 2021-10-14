@@ -28,6 +28,7 @@
     </header>
     <main>
         <h1>Accueil</h1>
+        <x-auth-session-status :status="session('status')" />
         <div>
             {{$posts->links('paginationStyle') }}
         </div>

@@ -8,6 +8,7 @@
     <main class="mainProfil">
         <section class="containerList">
             <h3>Vos donations</h3>
+            <x-auth-session-status :status="session('status')" />
             <div>
                 @foreach ($listDon as $list)
                 <ul class="ContainerListDon">
