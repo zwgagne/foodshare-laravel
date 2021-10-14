@@ -9,6 +9,8 @@ Route::post('/update', [AppController::class, 'update'])->middleware(['auth']);
 Route::delete('/food/{id}', [AppController::class, 'destroy'])->name('delete_food');
 
 Route::get('/profil', [AppController::class, 'profil'])->middleware(['auth']);
+Route::put('/edit_profil', [AppController::class, 'updateProfil'])->name("edit_profil");
+
 
 Route::get('/food_donnation', [AddDonnationController::class, 'create'])->middleware(['auth'])->name('add.donnation');
 Route::post('/food_donnation', [AddDonnationController::class, 'store'])->middleware(['auth']);

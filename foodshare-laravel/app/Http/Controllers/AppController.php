@@ -6,6 +6,8 @@ use App\Models\food;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
 
 class AppController extends Controller
 {
@@ -40,6 +42,24 @@ class AppController extends Controller
 
         return View('profil', compact('post', 'listDon', 'foodReserved', 'foodID'));
     }
+
+
+    public function updateProfil(Request $request) {
+        
+        
+        $user = User::find(Auth::user()->id);
+
+        
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->address = $request->input('address');
+        $user->city = $request->input('city');
+        $user->password = Hash::make($request->input('password'));
+        $user->save();
+
+        return redirect('/profil');
+    }
+
 
     public function destroy($id) {
         food::destroy($id);

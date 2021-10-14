@@ -62,8 +62,9 @@
         <h3>Gestion compte</h3>
         <div class="formEditProfil">
             <div class="editSecProfil">
-                <form action="" method="POST">
+                <form action="{{ route('edit_profil') }}" method="POST">
                     {{ csrf_field() }}
+                    {{ method_field("PUT")}}
                     <label class="labelEditProfil" for="updateName">Nom</label>
                     <input id="updateName" name="name" value="{{Auth::user()->name}}" type="text">
                     
@@ -77,8 +78,8 @@
                     <input id="updateCity" name="city" value="{{Auth::user()->city}}" type="text">
                     
                     <label class="labelEditProfil" for="">Mot de passe</label>
-                    <input id="update" name="password" type="text">
-                    <button class="btnUpdateProfil" type="submit">Mettre a jour</button>
+                    <input id="update" name="password" placeholder="Nouveau mot de passe" type="text">
+                    <button class="btnUpdateProfil" type="submit">Mettre à jour</button>
                 </form>
             </div>
             <div class="ShowInfoProfil">
