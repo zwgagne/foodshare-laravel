@@ -46,6 +46,10 @@ class User extends Authenticatable
 
     public function cardReservedInfo()
     {
-        return $this->hasMany(food::class);
+        return $this->hasMany(users::class);
+    }
+    public function InfosUsers()
+    {
+        return $this->belongsTo(food::class);
     }
 }

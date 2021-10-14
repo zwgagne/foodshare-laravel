@@ -10,9 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class AppController extends Controller
 {
     public function index() {
-        // tentative de debug ;) marche pas pour l'insatant
-        //$posted = food::where('is_reserved', '=', '0')->get();
-        //$userInfo = $posted->InfoUser()->user_id;
+
         $posts = food::where('is_reserved', '=', '0')->latest()->paginate(9);
         return view('index', compact('posts'));
     }

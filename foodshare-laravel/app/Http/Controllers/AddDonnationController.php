@@ -50,7 +50,6 @@ class AddDonnationController extends Controller
         if ($request->image) {
             $path = basename($request->image->store('img', 'public'));
 
-            // Enregistre l'image réduite dans le dossier '/storage/app/public/thumbs'
             $image = InterventionImage::make($request->image)->widen(500)->encode();
             Storage::put('public/img/' . $path, $image);
         }

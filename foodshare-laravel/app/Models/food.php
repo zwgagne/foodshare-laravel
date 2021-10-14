@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\food as Authenticatable;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
@@ -16,11 +17,7 @@ class food extends Model
         return $this->hasMany(food::class);
     }
 
-    public function InfoUser()
-    {
-        return $this->belongsTo(User::class);
-    }
-
+    
     protected $fillable = [
         'description',
         'email',
@@ -33,4 +30,9 @@ class food extends Model
         'user_id',
         'meteo',
     ];
+
+    public function InfoUser()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }
