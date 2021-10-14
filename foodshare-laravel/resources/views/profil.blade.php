@@ -61,26 +61,40 @@
     <section class="containerInfoProfil">
         <h3>Gestion compte</h3>
         <div class="formEditProfil">
-            <section>
-                <form action="">
-                {{ csrf_field() }}
-                <label for="updateName">Nom</label>
-                <input id="updateName" name="name" type="text">
-
-                <label for="updateEmail">Email</label>
-                <input id="updateEmail" name="email" type="email">
-
-                <label for="updateAddress">Address</label>
-                <input id="updateAddress" name="address" type="text">
-
-                <label for="updateCity">Ville</label>
-                <input id="updateCity" name="city" type="text">
-
-                <label for="">Mot de passe</label>
-                <input id="update" name="password" type="text">
-
+            <div class="editSecProfil">
+                <form action="" method="POST">
+                    {{ csrf_field() }}
+                    <label class="labelEditProfil" for="updateName">Nom</label>
+                    <input id="updateName" name="name" value="{{Auth::user()->name}}" type="text">
+                    
+                    <label class="labelEditProfil" for="updateEmail">Email</label>
+                    <input id="updateEmail" name="email" value="{{Auth::user()->email}}" type="email">
+                    
+                    <label class="labelEditProfil" for="updateAddress">Address</label>
+                    <input id="updateAddress" name="address" value="{{Auth::user()->address}}" type="text">
+                    
+                    <label class="labelEditProfil" for="updateCity">Ville</label>
+                    <input id="updateCity" name="city" value="{{Auth::user()->city}}" type="text">
+                    
+                    <label class="labelEditProfil" for="">Mot de passe</label>
+                    <input id="update" name="password" type="text">
+                    <button class="btnUpdateProfil" type="submit">Mettre a jour</button>
                 </form>
-            </section>
+            </div>
+            <div class="ShowInfoProfil">
+                <div class="showPositionInfoProfil">
+                    <p><b>Nom: </b> {{Auth::user()->name}}</p>
+                    <p><b>Email: </b> {{Auth::user()->email}}</p>
+                    <p><b>Address: </b> {{Auth::user()->address}}</p>
+                    <p><b>Ville: </b> {{Auth::user()->city}}</p>
+                </div>
+            </div>
+            <div class="deleteUserContainer">
+                <form action="">
+                    <p>Supprimer votre compte</p>
+                    <button class="btnDeleteCompt" type="submit">Supprimer</button>
+                </form>
+            </div>
         </div>
     </section>
     <div id="Modal" class="displayOFF containerModalDel ">

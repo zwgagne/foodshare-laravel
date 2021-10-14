@@ -332,10 +332,102 @@ main {
 }
 
 .formEditProfil {
+  display: flex;
+  flex-wrap: wrap;
   width: 60%;
   background-color: #333e5273;
   border-radius: 8px;
   padding: 20px;
+}
+
+.editSecProfil{
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.editSecProfil > form > label{
+  width: 100%;
+  font-size: 1.4rem;
+}
+
+.editSecProfil > form > input{
+  width: 100%;
+  background-color: #1a202c;
+  border-radius: 8px;
+  border: solid 1px transparent;
+  color: #FFFFFF;
+  font-size: 1.3rem;
+  padding: 10px;
+  margin: 10px 0px;
+}
+
+.btnUpdateProfil{
+  border: solid 3px #EE6352;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 5px 25px;
+  margin-top: 25px;
+}
+
+.btnUpdateProfil:hover{
+  background-color: #EE6352;
+}
+
+.btnUpdateProfil:active{
+  color: #1a202c;
+}
+
+.ShowInfoProfil{
+  width: 40%;
+  padding: 20px 40px;
+}
+
+.showPositionInfoProfil{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0% 15%;
+}
+
+.showPositionInfoProfil>p{
+  width: 100%;
+}
+
+.deleteUserContainer{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #1a202c;
+  border-radius: 8px;
+  margin-top: 8%;
+  padding: 5% 0%;
+  justify-content: center;
+}
+
+.deleteUserContainer>form>p{
+  font-size: 1.5rem;
+}
+
+.btnDeleteCompt{
+  background-color: transparent;
+  border: solid 3px #e63946;
+  border-radius: 8px;
+  color: #e63946;
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding: 8px 22%;
+}
+
+.btnDeleteCompt:hover{
+  background-color: #e63946;
+  color: #FFFFFF;
+}
+
+.btnDeleteCompt:active{
+  color: #1a202c;
 }
 
 .foodArticleReserved {

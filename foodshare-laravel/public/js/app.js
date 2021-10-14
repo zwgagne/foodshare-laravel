@@ -2106,22 +2106,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 "use strict";
 
 
-function onClick(href) {
-  fetch(href, {
-    headers: {
-      "X-CSRF-TOKEN": f37b40319956a02fef274656bbfbfb11
-    },
-    method: 'DELETE'
-  }).then(function (response) {
-    return response.json();
-  }).then(function (data) {
-    console.log('data', data.id);
-    document.getElementById('post-' + data.id).remove();
-  })["catch"](function (error) {
-    console.log('error', error);
-  });
-}
-
 /***/ }),
 
 /***/ "./node_modules/lodash/lodash.js":
